@@ -9,8 +9,10 @@
       <ProjectsSection id="projects" />
       <hr class="divider" />
       <ExperienceSection id="experience" />
+      <!-- Certifications section hidden for now.
       <hr class="divider" />
       <CertificationsSection id="certifications" />
+      -->
       <hr class="divider" />
       <AboutSection id="about" />
       <hr class="divider" />
@@ -29,7 +31,6 @@ import HeroSection from './components/HeroSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
-import CertificationsSection from './components/CertificationsSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ResumeSection from './components/ResumeSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -38,7 +39,7 @@ import FooterBar from './components/FooterBar.vue'
 const activeSection = ref('home')
 
 const handleScroll = () => {
-  const sections = ['home','skills','projects','experience','certifications','about','resume','contact']
+  const sections = ['home', 'skills', 'projects', 'experience', 'about', 'resume', 'contact']
   for (let i = sections.length - 1; i >= 0; i--) {
     const el = document.getElementById(sections[i])
     if (el && el.getBoundingClientRect().top <= 80) {

@@ -44,10 +44,6 @@
             <img :src="heroPhoto" alt="Portrait of Eu Geuo B. Vecino" class="photo-image" />
           </div>
         </div>
-
-        <div class="tech-orbit">
-          <span class="orbit-tag" v-for="tech in orbitTechs" :key="tech">{{ tech }}</span>
-        </div>
       </div>
     </div>
 
@@ -60,8 +56,6 @@
 
 <script setup>
 import heroPhoto from '../assets/eu-photo.JPG'
-
-const orbitTechs = ['Vue.js', 'Laravel', 'React', 'Node.js', 'MySQL', 'Firebase']
 
 const scrollTo = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -92,7 +86,7 @@ const scrollTo = (id) => {
 }
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 460px;
   gap: 64px;
   align-items: center;
 }
@@ -159,19 +153,18 @@ const scrollTo = (id) => {
 /* RIGHT - Visual */
 .hero-visual {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 28px;
+  justify-content: center;
 }
 
 .photo-frame {
   position: relative;
-  width: 320px;
+  width: min(390px, 100%);
 }
 
 .photo-placeholder {
-  width: 320px;
-  height: 360px;
+  width: 100%;
+  aspect-ratio: 13 / 15;
   border-radius: var(--radius-xl);
   background: var(--color-surface-alt);
   border: 1.5px solid var(--color-border);
@@ -188,27 +181,6 @@ const scrollTo = (id) => {
   object-position: 46% 14%;
   display: block;
   transform: scale(1.16);
-}
-
-.tech-orbit {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-}
-.orbit-tag {
-  padding: 6px 14px;
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: 100px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  transition: border-color 0.2s, color 0.2s;
-}
-.orbit-tag:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
 }
 
 .hero-scroll-hint {

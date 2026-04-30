@@ -2,9 +2,9 @@
   <section id="experience">
     <div class="container">
       <div class="section-head reveal">
-        <div class="section-tag">Background</div>
+        
         <h2 class="section-heading">Experience &amp; Involvement</h2>
-        <p class="section-sub">From on-the-job training to student leadership — a record of growth beyond the classroom.</p>
+        <p class="section-sub">From on-the-job training to student leadership, a record of growth beyond the classroom.</p>
       </div>
 
       <div class="exp-layout">
@@ -41,16 +41,16 @@
           <p class="exp-detail-desc">{{ selected.description }}</p>
 
           <div class="exp-highlights">
-            <div class="highlight-item" v-for="h in selected.highlights" :key="h">
+            <div class="highlight-item" v-for="highlight in selected.highlights" :key="highlight">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{{ h }}</span>
+              <span>{{ highlight }}</span>
             </div>
           </div>
 
           <div class="exp-skills-used" v-if="selected.skills">
             <div class="detail-skills-label">Skills applied</div>
             <div class="detail-skills-list">
-              <span v-for="s in selected.skills" :key="s" class="tech-tag">{{ s }}</span>
+              <span v-for="skill in selected.skills" :key="skill" class="tech-tag">{{ skill }}</span>
             </div>
           </div>
         </div>
@@ -66,48 +66,48 @@ const activeIdx = ref(0)
 
 const experiences = [
   {
+    type: 'Venture',
+    role: 'Co-Founder / AI Automation Builder',
+    org: 'PhaseOps AI',
+    date: 'Present',
+    color: '#14b8a6',
+    tagBg: '#ecfeff',
+    tagColor: '#0f766e',
+    iconBg: '#ecfeff',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2"><path d="M12 3l1.9 3.86L18 9l-4.1 2.14L12 15l-1.9-3.86L6 9l4.1-2.14L12 3z"/><path d="M5 16l.95 1.95L8 19l-2.05 1.05L5 22l-.95-1.95L2 19l2.05-1.05L5 16z"/><path d="M19 14l1.2 2.4L22.6 17l-2.4 1.2L19 20.6l-1.2-2.4L15.4 17l2.4-1.2L19 14z"/></svg>`,
+    description: 'Co-founded PhaseOps AI, an AI automation agency focused on building practical systems that reduce repetitive work and make business operations run more smoothly.',
+    highlights: [
+      'Helped deliver 15+ automation workflows across different business use cases',
+      'Built automations for content posting, customer support replies, smart inbox management, and email sorting',
+      'Learned how to turn messy manual processes into reliable AI-assisted workflows with clearer steps and fewer bottlenecks',
+      'Worked directly on identifying automation opportunities, shaping solutions, and communicating value in a way clients could act on quickly',
+    ],
+    skills: ['AI Automation', 'Workflow Design', 'Prompt Engineering', 'Operations Thinking', 'Client Communication']
+  },
+  {
     type: 'Internship',
-    role: 'IT Intern / OJT Developer',
-    org: 'Local Tech Company, Bacolod City',
-    date: 'Jan 2026 – Apr 2026',
+    role: 'IT Intern / Quality Assurance',
+    org: 'IREPLY BACK OFFICE SERVICES, INC.',
+    date: 'Jan 2026 - Apr 2026',
     color: '#1a5cff',
     tagBg: '#eef2ff',
     tagColor: '#1a5cff',
     iconBg: '#eef2ff',
     icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a5cff" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
-    description: 'Completed 500-hour on-the-job training as a full-stack developer, contributing to production web systems used by internal teams.',
+    description: 'Completed 500-hour on-the-job training at IREPLY BACK OFFICE SERVICES, INC., supporting quality assurance work for internal systems and release-ready testing.',
     highlights: [
-      'Developed and maintained internal web applications using Laravel and Vue.js',
-      'Collaborated in daily standups and agile sprint reviews',
-      'Resolved over 30 bug tickets and implemented 5 new features',
-      'Wrote unit tests and contributed to code documentation',
+      'Executed manual testing for internal tools and documented defects clearly for the development team',
+      'Reproduced reported issues, verified fixes, and helped improve release readiness before deployment',
+      'Prepared bug reports with steps, expected behavior, and actual results to speed up debugging',
+      'Collaborated with teammates to keep test coverage aligned with project requirements and timelines',
     ],
-    skills: ['Laravel', 'Vue.js', 'MySQL', 'Git', 'Agile']
-  },
-  {
-    type: 'Freelance',
-    role: 'Freelance Web Developer',
-    org: 'Independent Clients',
-    date: '2024 – Present',
-    color: '#22c55e',
-    tagBg: '#f0fdf4',
-    tagColor: '#16a34a',
-    iconBg: '#f0fdf4',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`,
-    description: 'Independently delivered web solutions for small businesses and organizations in Bacolod, from landing pages to full CRUD systems.',
-    highlights: [
-      'Built a custom POS (Point-of-Sale) system for a local food business',
-      'Designed and developed 3 company landing pages with SEO basics',
-      'Handled full project lifecycle: requirements, design, development, deployment',
-      'Maintained ongoing client relationships and provided post-launch support',
-    ],
-    skills: ['HTML/CSS', 'JavaScript', 'PHP', 'WordPress', 'Figma']
+    skills: ['Quality Assurance', 'Manual Testing', 'Bug Reporting', 'Documentation', 'Team Collaboration']
   },
   {
     type: 'Leadership',
     role: 'LEAF President',
     org: 'LEAF Organization, USLS',
-    date: '2024 – 2025',
+    date: '2025 - 2026',
     color: '#f97316',
     tagBg: '#fff7ed',
     tagColor: '#ea580c',
@@ -126,7 +126,7 @@ const experiences = [
     type: 'Leadership',
     role: 'CCS Council Secretary',
     org: 'College of Computer Studies Student Council, USLS',
-    date: '2023 – 2024',
+    date: '2025 - 2026',
     color: '#a855f7',
     tagBg: '#fdf4ff',
     tagColor: '#9333ea',
@@ -140,25 +140,6 @@ const experiences = [
       'Assisted in organizing CCS Week and tech-related student events',
     ],
     skills: ['Documentation', 'Communication', 'Organization', 'Administrative Work']
-  },
-  {
-    type: 'Academic',
-    role: 'Hackathon Participant',
-    org: 'Regional IT Competition',
-    date: '2024',
-    color: '#ef4444',
-    tagBg: '#fff1f2',
-    tagColor: '#dc2626',
-    iconBg: '#fff1f2',
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-    description: 'Competed in a regional hackathon, collaborating with a team to design and build a working prototype within a 24-hour time limit.',
-    highlights: [
-      'Built a functional civic-tech prototype in under 24 hours',
-      'Presented solution to a panel of judges from industry and academia',
-      'Team awarded Top 5 finalist out of 20+ competing teams',
-      'Gained experience in rapid prototyping and pressure-tested collaboration',
-    ],
-    skills: ['Rapid Prototyping', 'Team Collaboration', 'React', 'Node.js']
   },
 ]
 
@@ -175,7 +156,6 @@ const selected = computed(() => experiences[activeIdx.value])
   align-items: start;
 }
 
-/* Timeline list */
 .exp-timeline {
   display: flex;
   flex-direction: column;
@@ -229,7 +209,6 @@ const selected = computed(() => experiences[activeIdx.value])
 }
 .exp-item.active .exp-chevron { color: var(--color-accent); }
 
-/* Detail pane */
 .exp-detail {
   background: var(--color-surface);
   border: 1.5px solid var(--color-border);
@@ -284,7 +263,6 @@ const selected = computed(() => experiences[activeIdx.value])
   font-size: 0.875rem;
   color: var(--color-text);
 }
-.exp-skills-used { }
 .detail-skills-label {
   font-size: 0.6875rem;
   font-weight: 700;

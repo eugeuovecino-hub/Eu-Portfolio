@@ -40,10 +40,9 @@ const menuOpen = ref(false)
 
 const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'certifications', label: 'Certifications' },
   { id: 'resume', label: 'Resume' },
   { id: 'contact', label: 'Contact' },
 ]
