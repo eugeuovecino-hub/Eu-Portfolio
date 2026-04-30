@@ -2,7 +2,7 @@
   <header :class="['navbar', { scrolled: isScrolled }]">
     <div class="nav-inner container">
       <a href="#home" class="nav-logo" @click.prevent="scrollTo('home')">
-        <span class="logo-initials">EV</span>
+        <img :src="logoMark" alt="Eu Geuo Vecino logo" class="logo-mark" />
         <span class="logo-name">Eu Geuo Vecino</span>
       </a>
 
@@ -32,6 +32,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import logoMark from '../assets/eu-logo-mark.png'
 
 const props = defineProps({ activeSection: String })
 
@@ -84,19 +85,14 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   gap: 10px;
   text-decoration: none;
 }
-.logo-initials {
-  width: 36px;
-  height: 36px;
-  background: var(--color-text);
-  color: var(--color-bg);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 .logo-name {
   font-family: var(--font-body);
